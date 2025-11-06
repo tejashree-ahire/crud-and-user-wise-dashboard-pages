@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "a4a5d89d-5c26-4078-894a-1464a0379631",
+		"name": "rich_sys_test_api_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38621130"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/delete/3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/delete/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"delete",
+						"3"
+					],
+					"query": [
+						{
+							"key": "fullname",
+							"value": "Tejashree Ahire",
+							"disabled": true
+						},
+						{
+							"key": "age",
+							"value": "26",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "female",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "testpostman12345@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "customer_type",
+							"value": "client",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/register/store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/register/store",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"register",
+						"store"
+					],
+					"query": [
+						{
+							"key": "fullname",
+							"value": "Tejashree Ahire",
+							"disabled": true
+						},
+						{
+							"key": "age",
+							"value": "26",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "female",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "testpostman12345@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "customer_type",
+							"value": "client",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/update/5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Postman-Token",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "2555",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "testpostman12345@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "isLoggedIn",
+							"value": "true",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/update/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"update",
+						"5"
+					],
+					"query": [
+						{
+							"key": "isLoggedIn",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/dashboard/     - for client dashboard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Postman-Token",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/admindashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"admindashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/admindashboard     - for Admindashboard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Postman-Token",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/admindashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"admindashboard"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

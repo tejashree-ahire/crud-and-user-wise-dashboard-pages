@@ -1,103 +1,60 @@
-## User & Admin Management System
+# CodeIgniter 4 Framework
 
-## 📘 Overview
+## What is CodeIgniter?
 
-Example of a simple yet secure user management system built with **CodeIgniter 4**.
-It demonstrates full-stack CRUD operations with **authentication**, **role-based access**, and **security best practices** such as CSRF protection and AuthGuards.
+CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
+More information can be found at the [official site](https://codeigniter.com).
 
+This repository holds the distributable version of the framework.
+It has been built from the
+[development repository](https://github.com/codeigniter4/CodeIgniter4).
 
-There are two types of users in this system:
+More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-1. **Admin**
-2. **Client**
+You can read the [user guide](https://codeigniter.com/user_guide/)
+corresponding to the latest version of the framework.
 
-### 📝 Registration
+## Important Change with index.php
 
-* New users must first register using the registration form.
-* Upon successful registration, users are redirected to the login page.
+`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
+for better security and separation of components.
 
-### 🔐 Login
+This means that you should configure your web server to "point" to your project's *public* folder, and
+not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
+framework are exposed.
 
-* Users can log in with their **email** and **password**.
-* The system checks the **customer_type** to determine user type:
+**Please** read the user guide for a better explanation of how CI4 works!
 
-  * **Admin** → Redirected to **Admin Dashboard**
-  * **Client** → Redirected to **User Dashboard**
+## Repository Management
 
----
+We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
+We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
+FEATURE REQUESTS.
 
-## 🧑‍💼 Client Dashboard
+This repository is a "distribution" one, built by our release preparation script.
+Problems with it can be raised on our forum, or as issues in the main repository.
 
-After login, **clients** are redirected to their **dashboard** page where they can:
+## Contributing
 
-* View their personal and policy-related details.
-* Update editable fields using the **Edit Profile** button.
-* Logout securely using the **Logout** button.
+We welcome contributions from the community.
 
-All user data is retrieved using **LEFT JOIN** queries across multiple related tables (e.g., client, bill, gic, lic, goal, thought).
+Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
 
----
+## Server Requirements
 
-## 🧰 Admin Dashboard
+PHP version 8.1 or higher is required, with the following extensions installed:
 
-Admins are redirected to a **dashboard** displaying a list of all **clients** only.
+- [intl](http://php.net/manual/en/intl.requirements.php)
+- [mbstring](http://php.net/manual/en/mbstring.installation.php)
 
-Features:
+> [!WARNING]
+> - The end of life date for PHP 7.4 was November 28, 2022.
+> - The end of life date for PHP 8.0 was November 26, 2023.
+> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
+> - The end of life date for PHP 8.1 will be December 31, 2025.
 
-* View all client records.
-* Delete client entries (soft delete only — data is not permanently removed).
+Additionally, make sure that the following extensions are enabled in your PHP:
 
-* On delete, the `active_status` field changes from **1 → 0**.
-* Admin-only access is protected using **AuthGuard**.
-
----
-
-## 🧱 Security Features
-
-1. **CSRF Token** → Applied to registration and login forms to prevent CSRF attacks.
-2. **AuthGuard Filter** → Protects routes to ensure only logged-in users can access dashboards.
-3. **Session Management** → Maintains user state securely during the session.
-
----
-
-## 🔌 API Testing (Postman)
-
-The system includes **CRUD APIs** for the `client` table to test functionality in Postman.
----
-
-## ⚙️ Technical Details
-
-| Feature     | Description                      |
-| ----------- | -------------------------------- |
-| Framework   | CodeIgniter 4                    |
-| Language    | PHP 8.2+                         |
-| Database    | MySQL                            |
-| Security    | CSRF, AuthGuard, Session         |
-| UI          | Bootstrap 5                      |
-| API Testing | Postman                          |
-| Query Type  | LEFT JOIN for combined data view |
-
----
-
-## 🔒 AuthGuard Configuration
-
-* Implemented in `app/Filters/AuthGuard.php`
-* Checks if the user session (`isLoggedIn`) is active.
-* Redirects unauthenticated users to `/login`.
-
-
-## ✅ Summary
-
-This project serves as a **complete authentication and user management system** in CodeIgniter 4, integrating:
-
-* Secure registration and login
-* Role-based dashboards
-* Admin management tools
-* Modern PHP practices and data handling
-
----
-
-## 👩‍💻 Login Credentials
-admin  : admin@gmail.com /12345
-client : alice@example.com/ 12345
-
+- json (enabled by default - don't turn it off)
+- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
+- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library

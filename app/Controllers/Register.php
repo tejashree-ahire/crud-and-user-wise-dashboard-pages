@@ -137,9 +137,6 @@ class Register extends Controller
                 'message' => 'User not found!',
             ]);
         }
-        
-
-
 
              if ($this->request->hasHeader('Postman-Token')) {
             return $this->response->setJSON([

@@ -104,7 +104,8 @@ class Register extends Controller
         if ($user['customer_type'] === 'Admin') {
             return redirect()->to('admindashboard')->with('success', 'Login successful');
         } else {
-            return redirect()->to('dashboard')->with('success', 'Login successful');
+            return redirect()->to('dashboard/' . session()->get('id'))->with('success', 'Login successful');
+
         }
 
     }

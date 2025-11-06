@@ -16,7 +16,7 @@ class AuthGuard implements FilterInterface
         }
 
         // Check session for web users
-        if (! session()->get('isLoggedIn')) {
+        if (! session()->get('logged_in')) {
             return redirect()
                 ->to('/login')
                 ->with('error', 'Please log in to continue.');
@@ -31,3 +31,4 @@ class AuthGuard implements FilterInterface
         // Nothing required here for now
     }
 }
+
